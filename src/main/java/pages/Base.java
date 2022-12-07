@@ -5,12 +5,18 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 public abstract class Base {
-    protected WebDriver driver;
+     protected WebDriver driver;
+     public String baseUrl;
+     public String urlPath;
 
-    Base() {
+    public Base() {
         driver = Driver.getDriver();
         PageFactory.initElements(driver, this);
-        String baseUrl = "https://demoqa.com/";
-        driver.get(baseUrl);
     }
+
+    public String getCurrentUrl() {
+        return baseUrl + urlPath;
+    }
+
+
 }

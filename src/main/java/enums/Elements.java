@@ -12,11 +12,15 @@ public enum Elements {
     DYNAMIC_PROPERTIES("Dynamic Properties");
 
     Elements(String elementName) {
-        this.elementName=elementName;
+        this.elementName = elementName;
+
     }
+
     private String elementName;
 
     public String getElementName() {
         return elementName;
     }
+
+
 }

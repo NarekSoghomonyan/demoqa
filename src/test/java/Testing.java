@@ -1,23 +1,35 @@
-import enums.Elements;
-import enums.Widgets;
+import enums.WidgetsConstants;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pages.ElementPage;
-import pages.LandingPage;
+import pages.*;
+import pages.widgets.AlertsFrameAndWindows;
+import pages.widgets.ElementsPage;
+import pages.widgets.FormsPage;
+import pages.widgets.Widgets;
 
 public class Testing extends BaseTest {
-    LandingPage homePage;
-    ElementPage elementPage;
+    LandingPage landingPage;
+    ElementsPage elementPage;
+    FormsPage formsPage;
+    AlertsFrameAndWindows alertsFrameAndWindows;
+    Widgets widgets;
 
     @BeforeMethod
     public void initElements() {
-        homePage = new LandingPage();
-        elementPage = new ElementPage();
+        landingPage = new LandingPage();
+        elementPage = new ElementsPage();
+        formsPage = new FormsPage();
+        alertsFrameAndWindows = new AlertsFrameAndWindows();
+        widgets = new Widgets();
     }
 
     @Test
     public void test() {
-        homePage.selectWidget(Widgets.ELEMENTS);
-        elementPage.selectElement(Elements.BUTTONS);
+        landingPage.getUrl();
+        System.out.println(landingPage.baseUrl+ "  baseUrl" );
+        System.out.println(elementPage.getCurrentUrl()+"  baseUrl + urlPath");
+        System.out.println(landingPage.urlPath+ "  urlPath" );
+
     }
 }
